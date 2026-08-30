@@ -1,198 +1,253 @@
-🚢 Titanic Survival Prediction using Supervised Machine Learning
+🚢 Titanic Survival Prediction
+
+A Supervised Machine Learning Classification project using the Titanic dataset to predict passenger survival and compare multiple classification algorithms.
 
 📌 Project Overview
 
-This project uses the Titanic dataset to predict whether a passenger survived the Titanic disaster based on passenger-related features.
+This project demonstrates a complete Supervised Machine Learning workflow using the Titanic dataset.
 
-The project demonstrates the complete workflow of a Supervised Machine Learning Classification problem, including data exploration, data preprocessing, feature encoding, feature scaling, model training, prediction, and model evaluation.
+The project includes:
+
+* Data Understanding
+* Exploratory Data Analysis (EDA)
+* Data Cleaning
+* Missing Value Handling
+* Feature Selection
+* Categorical Data Encoding
+* Feature Scaling
+* Train-Test Split
+* Model Training
+* Model Evaluation
+* Model Comparison
 
 Multiple classification algorithms are implemented and compared to identify the best-performing model.
 
-⸻
+🎯 Problem Statement
 
-🎯 Objective
+The objective of this project is to predict whether a passenger survived the Titanic disaster based on passenger information.
 
-The main objective of this project is to predict the survival status of Titanic passengers.
+Target Variable
 
-* Target Variable: survived
-* 0 → Did not survive
+survived
+
+* 0 → Did Not Survive
 * 1 → Survived
-
-⸻
 
 📊 Dataset
 
-The Titanic dataset contains information about 891 passengers and initially includes 15 columns.
+The Titanic dataset contains information about 891 passengers.
 
-Important features include:
+Important Features
 
 Feature	Description
-survived	Survival status (Target)
+survived	Survival status
 pclass	Passenger class
-sex	Passenger gender
-age	Passenger age
+sex	Gender
+age	Age of passenger
 sibsp	Number of siblings/spouses aboard
 parch	Number of parents/children aboard
 fare	Passenger fare
 embarked	Port of embarkation
 
-⸻
+🔍 Exploratory Data Analysis
 
-🔍 Data Preprocessing
+Exploratory Data Analysis (EDA) was performed to understand the dataset and identify important patterns.
 
-The following preprocessing steps were performed:
+The analysis includes:
 
-1. Checked the dataset structure and statistics.
-2. Checked for missing/null values.
-3. Removed unnecessary columns:
-    * deck
-    * embark_town
-    * alive
-    * class
-    * who
-    * adult_male
-4. Filled missing values in the age column using the mean.
-5. Removed rows containing missing values in the embarked column.
-6. Applied Label Encoding to categorical columns:
-    * sex
-    * embarked
-7. Converted the dataset into integer format.
-8. Split the data into training and testing sets using an 80:20 ratio.
-9. Applied StandardScaler for feature scaling where required.
+* Dataset structure
+* Statistical information
+* Missing values
+* Survival distribution
+* Passenger characteristics
+* Feature relationships
+* Data visualization
 
-⸻
+Visualizations were created using Matplotlib and Seaborn.
 
-🤖 Machine Learning Algorithms
+🧹 Data Preprocessing
 
-Five supervised classification algorithms were implemented:
+Before training the models, the dataset was cleaned and prepared.
+
+The preprocessing steps include:
+
+* Handling missing values
+* Removing unnecessary columns
+* Encoding categorical features
+* Separating features and target variable
+* Splitting data into training and testing sets
+* Applying feature scaling where required
+
+✂️ Train-Test Split
+
+The dataset was divided into:
+
+* 80% Training Data
+* 20% Testing Data
+
+The training data was used to train the machine learning models, while the testing data was used to evaluate their performance.
+
+⚙️ Feature Scaling
+
+Feature scaling was applied using StandardScaler.
+
+Scaling is especially important for distance-based and margin-based algorithms such as:
+
+* K-Nearest Neighbors (KNN)
+* Support Vector Machine (SVM)
+
+🤖 Machine Learning Models
+
+The following Supervised Machine Learning Classification algorithms were implemented:
 
 1. Logistic Regression
-
-A linear classification algorithm used as one of the baseline models.
-
 2. K-Nearest Neighbors (KNN)
-
-A distance-based classification algorithm. Feature scaling was applied because KNN depends on distances between data points.
-
 3. Naive Bayes
-
-The Gaussian Naive Bayes algorithm was used for classification.
-
 4. Decision Tree
-
-A tree-based supervised learning algorithm used to classify passengers based on their features.
-
 5. Support Vector Machine (SVM)
 
-SVM was implemented using the RBF (Radial Basis Function) kernel to handle nonlinear relationships in the data.
+1️⃣ Logistic Regression
 
-SVC(kernel='rbf', random_state=42)
+Logistic Regression is a supervised classification algorithm used to predict binary outcomes.
 
-⸻
+In this project, it predicts whether a passenger:
+
+* Survived
+* Did not survive
+
+2️⃣ K-Nearest Neighbors (KNN)
+
+KNN is a distance-based machine learning algorithm.
+
+It classifies a new data point based on the classes of its nearest neighboring data points.
+
+Feature scaling was applied before training the KNN model.
+
+3️⃣ Naive Bayes
+
+Gaussian Naive Bayes was used as a probabilistic classification algorithm.
+
+It uses probability and Bayes’ theorem to predict the class of a passenger.
+
+4️⃣ Decision Tree
+
+Decision Tree is a tree-based supervised learning algorithm.
+
+It creates decision rules based on different passenger features and uses those rules to classify survival.
+
+5️⃣ Support Vector Machine (SVM)
+
+Support Vector Machine (SVM) finds the best decision boundary that separates different classes.
+
+In this project, SVM was implemented using the RBF (Radial Basis Function) Kernel.
+
+The RBF Kernel helps SVM handle nonlinear relationships in the dataset.
 
 📈 Model Evaluation
 
-The models were evaluated using:
+The trained models were evaluated using multiple classification metrics.
+
+The evaluation includes:
 
 * Accuracy Score
 * Confusion Matrix
 * Classification Report
-
-The classification report provides:
-
 * Precision
 * Recall
-* F1-score
-* Support
-
-⸻
+* F1-Score
 
 🏆 Model Comparison
 
-After implementing multiple supervised learning algorithms, their performance was compared using accuracy scores.
+The performance of all five classification models was compared.
 
-According to the notebook’s final comparison, SVM achieved the best accuracy among the models tested.
+This helps determine which machine learning algorithm performs best on the Titanic survival classification problem.
 
-Note: The exact accuracy values can be found in the Jupyter Notebook outputs.
-
-⸻
+According to the final model comparison in the notebook, Support Vector Machine (SVM) with RBF Kernel achieved the best performance among the tested models.
 
 🛠️ Technologies Used
 
+Programming Language
+
 * Python
-* Pandas
+
+Libraries
+
 * NumPy
+* Pandas
 * Matplotlib
 * Seaborn
 * Scikit-learn
+
+Tools
+
 * Google Colab
 * Jupyter Notebook
-
-⸻
+* GitHub
 
 📚 Machine Learning Concepts Covered
 
-This project covers the following concepts:
+This project covers:
 
 * Supervised Learning
 * Classification
 * Exploratory Data Analysis (EDA)
+* Data Cleaning
 * Missing Value Handling
+* Feature Selection
 * Label Encoding
 * Feature Scaling
 * Train-Test Split
 * Logistic Regression
-* KNN
+* K-Nearest Neighbors (KNN)
 * Naive Bayes
 * Decision Tree
-* Support Vector Machine
+* Support Vector Machine (SVM)
 * RBF Kernel
-* Model Evaluation
+* Accuracy Score
 * Confusion Matrix
+* Precision
+* Recall
+* F1-Score
 * Classification Report
 * Model Comparison
 
-⸻
-
 📁 Project Structure
 
-supervised-ml-classification-titanic/
+titanic-survival-prediction/
 │
 ├── titanic.ipynb
 ├── README.md
 └── requirements.txt
 
-⸻
-
 ▶️ How to Run
 
-Using Google Colab
+1. Clone or download this repository.
+2. Open titanic.ipynb using Google Colab or Jupyter Notebook.
+3. Install the required Python libraries.
+4. Run all notebook cells sequentially.
+5. Check the model evaluation and comparison results.
 
-1. Open the notebook in Google Colab.
-2. Run the cells sequentially.
-3. The Titanic dataset is loaded using Seaborn.
-4. Follow the preprocessing and model-training steps.
-5. Compare the performance of the different models.
-
-Using Jupyter Notebook
-
-Install the required libraries:
+📦 Required Libraries
 
 pip install numpy pandas matplotlib seaborn scikit-learn
 
-Then open:
-
-titanic.ipynb
-
-⸻
-
 💡 Key Learning
 
-This project demonstrates how different supervised machine learning algorithms can be applied to the same classification problem and evaluated using common performance metrics.
+This project provides practical experience with the complete Supervised Machine Learning Classification pipeline.
 
-It also demonstrates why feature preprocessing and scaling are important for algorithms such as KNN and SVM.
+It demonstrates how raw data is cleaned and transformed before training multiple machine learning models and comparing their performance.
 
-⸻
+🚀 Future Improvements
+
+The project can be improved further by:
+
+* Hyperparameter Tuning
+* Cross-Validation
+* Feature Engineering
+* Random Forest Implementation
+* Gradient Boosting Models
+* ROC-AUC Comparison
+* Model Deployment using Streamlit
 
 👨‍💻 Author
 
@@ -200,10 +255,12 @@ Aditya Raj
 
 B.Tech – Data Science
 
-⸻
-
 ⭐ Conclusion
 
-The Titanic Survival Prediction project provides practical experience with the complete supervised machine learning pipeline, from data preprocessing to model evaluation and comparison.
+This project demonstrates an end-to-end Supervised Machine Learning Classification workflow using the Titanic dataset.
 
-Among the implemented models, Support Vector Machine with an RBF kernel achieved the best accuracy according to the notebook’s final comparison.
+Multiple classification algorithms were trained and evaluated, including:
+
+Logistic Regression, KNN, Naive Bayes, Decision Tree, and Support Vector Machine.
+
+The project provides practical understanding of data preprocessing, model training, evaluation, and comparison of supervised machine learning algorithms.
